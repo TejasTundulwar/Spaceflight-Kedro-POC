@@ -1,0 +1,32 @@
+"""
+This is a boilerplate pipeline 'data_processing_tejas'
+generated using Kedro 0.18.3
+"""
+
+from kedro.pipeline import Pipeline, node, pipeline
+from .nodes import preprocess_companies, preprocess_shuttles, create_model_input_table
+
+def create_pipeline(**kwargs) -> Pipeline:
+    return pipeline([
+        node(
+            func = preprocess_companies,
+            inputs = "companies",
+            outputs = "preprocessed_companies",
+            name = "preprocess_companies_node_tejas"
+        ),
+        node(
+            func=preprocess_shuttles,
+            inputs="shuttles",
+            outputs="preprocessed_shuttles",
+            name="preprocess_shuttles_node_tejas"
+        ),
+        node(
+            func=create_model_input_table,
+            inputs=["preprocessed_shuttles","preprocessed_companies","reviews"],
+            outputs="model_input_table_tejas",
+            name="create_model_input_table"
+        )],
+    namespace = "data_processing",
+    inputs = ["companies", "shuttles", "reviews"],
+    outputs = "model_input_table",
+    )

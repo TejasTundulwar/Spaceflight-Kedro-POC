@@ -66,6 +66,21 @@ data_processing.preprocessed_shuttles:
   filepath: data/02_intermediate/preprocessed_shuttles.pq
   layer: intermediate
 
+data_processing_tejas.preprocessed_companies:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate_tejas/processed_companies.pq
+  layer: intermediate
+
+data_processing_tejas.preprocessed_shuttles:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate_tejas/preprocessed_shuttles.pq
+  layer: intermediate
+
+data_processing_tejas.model_input_table_tejas:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary_tejas/model_input_table.pq
+  layer: primary
+
 model_input_table:
   type: pandas.ParquetDataSet
   filepath: data/03_primary/model_input_table.pq
