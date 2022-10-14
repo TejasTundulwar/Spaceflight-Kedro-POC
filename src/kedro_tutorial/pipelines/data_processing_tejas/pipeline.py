@@ -24,9 +24,9 @@ def create_pipeline(**kwargs) -> Pipeline:
             func=create_model_input_table,
             inputs=["preprocessed_shuttles","preprocessed_companies","reviews"],
             outputs="model_input_table_tejas",
-            name="create_model_input_table"
+            name="create_model_input_table_tejas"
         )],
-    namespace = "data_processing",
+    namespace = "data_processing_tejas",
     inputs = ["companies", "shuttles", "reviews"],
-    outputs = "model_input_table",
+    outputs = "model_input_table_tejas",
     )

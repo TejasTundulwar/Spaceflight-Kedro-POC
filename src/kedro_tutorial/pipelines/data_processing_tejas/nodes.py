@@ -42,7 +42,7 @@ def preprocess_shuttles(shuttles:pd.DataFrame)->pd.DataFrame:
     shuttles['price'] = _parse_money(shuttles['price'])
     return shuttles
 
-def create_model_input_table(shuttles:pd.DataFrame, companies:pd.DataFrame, reviews:pd.DataFrame):
+def create_model_input_table(shuttles:pd.DataFrame, companies:pd.DataFrame, reviews:pd.DataFrame)->pd.DataFrame:
     """
 
     :param shuttles: Processed data for shuttles
