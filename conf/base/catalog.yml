@@ -66,25 +66,6 @@ data_processing.preprocessed_shuttles:
   filepath: data/02_intermediate/preprocessed_shuttles.pq
   layer: intermediate
 
-data_processing_tejas.preprocessed_companies:
-  type: pandas.ParquetDataSet
-  filepath: data/02_intermediate_tejas/processed_companies.pq
-  layer: intermediate
-
-data_processing_tejas.preprocessed_shuttles:
-  type: pandas.ParquetDataSet
-  filepath: data/02_intermediate_tejas/preprocessed_shuttles.pq
-  layer: intermediate
-
-data_processing_tejas.model_input_table_tejas:
-  type: pandas.ParquetDataSet
-  filepath: data/03_primary_tejas/model_input_table.pq
-  layer: primary
-
-data_science_tejas.regressor:
-  type: pickle.PickleDataSet
-  filepath: data/06_models_tejas/regressor.pickle
-  versioned: true
 
 model_input_table:
   type: pandas.ParquetDataSet
@@ -102,3 +83,23 @@ data_science.candidate_modelling_pipeline.regressor:
   filepath: data/06_models/regressor_candidate.pickle
   versioned: true
   layer: models
+
+data_processing_tejas.preprocessed_companies:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate_tejas/processed_companies.pq
+  layer: intermediate
+
+data_processing_tejas.preprocessed_shuttles:
+  type: pandas.ParquetDataSet
+  filepath: data/02_intermediate_tejas/preprocessed_shuttles.pq
+  layer: intermediate
+
+model_input_table_tejas:
+  type: pandas.ParquetDataSet
+  filepath: data/03_primary_tejas/model_input_table.pq
+  layer: primary
+
+data_science_tejas.regressor:
+  type: pickle.PickleDataSet
+  filepath: data/06_models_tejas/regressor.pickle
+  versioned: true

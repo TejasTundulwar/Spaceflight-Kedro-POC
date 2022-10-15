@@ -10,7 +10,7 @@ def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
         node(
             func=split_data,
-            inputs= ["model_input_table","params:model_options"],
+            inputs= ["model_input_table_tejas","params:model_options"],
             outputs=["X_train", "X_test", "y_train", "y_test"],
             name="split_data_node_tejas",
         ),
