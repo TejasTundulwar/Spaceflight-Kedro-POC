@@ -7,7 +7,7 @@ from kedro.pipeline import Pipeline, node, pipeline
 from .nodes import evaluate_model,train_model,split_data
 
 def create_pipeline(**kwargs) -> Pipeline:
-    return pipeline([
+    ds_pipeline = pipeline([
         node(
             func=split_data,
             inputs= ["model_input_table_tejas","params:model_options"],
@@ -27,3 +27,19 @@ def create_pipeline(**kwargs) -> Pipeline:
             name="evaluate_model_node_tejas",
         ),
     ])
+
+    ds_pipeline_1 = pipeline(
+        pipe=ds_pipeline,
+        inputs="model_input_table_tejas",
+        namespace="active_modelling_pipeline",
+    )
+    ds_pipeline_2 = pipeline(
+        pipe=ds_pipeline,
+        inputs="model_input_table_tejas",
+        namespace="candidate_modelling_pipeline",
+    )
+    return pipeline(
+        pipe=ds_pipeline_1 + ds_pipeline_2,
+        inputs="model_input_table_tejas",
+        namespace="data_science_tejas",
+    )

@@ -99,7 +99,19 @@ model_input_table_tejas:
   filepath: data/03_primary_tejas/model_input_table.pq
   layer: primary
 
-data_science_tejas.regressor:
+#data_science_tejas.regressor:
+#  type: pickle.PickleDataSet
+#  filepath: data/06_models_tejas/regressor.pickle
+#  versioned: true
+
+data_science_tejas.active_modelling_pipeline.regressor:
   type: pickle.PickleDataSet
-  filepath: data/06_models_tejas/regressor.pickle
+  filepath: data/06_models/regressor_active.pickle
   versioned: true
+  layer: models
+
+data_science_tejas.candidate_modelling_pipeline.regressor:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/regressor_candidate.pickle
+  versioned: true
+  layer: models
