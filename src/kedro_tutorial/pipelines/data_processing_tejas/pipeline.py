@@ -3,7 +3,8 @@ This is a boilerplate pipeline 'data_processing_tejas'
 generated using Kedro 0.18.3
 """
 
-from kedro.pipeline import Pipeline, node, pipeline
+from kedro.pipeline import Pipeline, node
+from kedro.pipeline.modular_pipeline import pipeline
 from .nodes import preprocess_companies, preprocess_shuttles, create_model_input_table
 
 def create_pipeline(**kwargs) -> Pipeline:
